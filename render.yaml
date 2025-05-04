@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: hospital-app
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: uvicorn main:app --host=0.0.0.0 --port=8000
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        value: your_postgres_connection_string_herepostgresql://postgres:okoto122@localhost:5432/hospital_mgt
+      - key: SECRET_KEY
+        value: SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
+      - key: CALENDLY_TOKEN
+        value: eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzQ2Mzc5NzE5LCJqdGkiOiJmNzhmY2RhMS1kNzJkLTQ4NTUtYTZkMy1jYjc2OWFhNzY3MDUiLCJ1c2VyX3V1aWQiOiI5YTkzMzEzMy0yNDlmLTRkYjYtODgwZS03NmFjNWQ2YzBmYWIifQ.Gu5zRTUMiMSpwfOfTsd4hovVHqkn1OhfQBcCcj-A1_Oi795WSfe7PA3UL6A3i9kG-neQzI0ynUkH5oZFQIR6Xg
